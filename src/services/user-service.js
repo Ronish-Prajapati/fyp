@@ -13,20 +13,13 @@ const getAuthHeader = () => {
 // Login function
 export const login = async (credentials) => {
     try {
-        const response = await myAxios.post("/auth/login", credentials);
-
-        const { token } = response.data; // Assuming response contains { token: "your_jwt_token" }
-
-        if (token) {
-            localStorage.setItem("authToken", token); // Store token in localStorage
-        }
-
+        const response = await myAxios.post("auth/login", credentials);
         return response.data;
     } catch (error) {
-        console.error("Login failed:", error.response?.data || error.message);
-        throw error;
+        throw error.response?.data?.message || "Invalid email or password";
     }
 };
+
 
 // Logout function
 export const logout = () => {

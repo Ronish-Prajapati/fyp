@@ -74,7 +74,7 @@ const Signup = () => {
       <Container className="mt-5">
         <Row className="justify-content-center">
           <Col md={6}>
-            <Card className="shadow-lg rounded" >
+            <Card className="shadow-lg rounded p-4" >
              
               <h2 className="text-center mb-4 text-black pt-2">Signup</h2>
              
